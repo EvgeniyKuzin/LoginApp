@@ -18,8 +18,10 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 10
     }
-        
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userName = userNameTF.text!
+    }
     
     @IBAction func forgotUserNameButtonTapped() {
         showAlert(withTitle: "Oops!", andMessage: "Your username is User")
@@ -33,17 +35,22 @@ final class LoginViewController: UIViewController {
         let userName = "User"
         let password = "1111"
         
-        if userNameTF.text == userName && passwordTF.text == password {
-            print("OK")
-        } else {
+        if userNameTF.text != userName && passwordTF.text != password {
             showAlert(
                 withTitle: "error",
                 andMessage: "wrong user name or password"
             )
             passwordTF.text = ""
+        } else {
+            return
         }
+    
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
+    }
     
 }
 
