@@ -37,7 +37,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log in"/>
                                         <connections>
                                             <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="GNu-PR-XHB"/>
-                                            <segue destination="F4q-HK-U3M" kind="presentation" id="d4G-0o-278"/>
+                                            <segue destination="F4q-HK-U3M" kind="presentation" modalPresentationStyle="fullScreen" id="d4G-0o-278"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,7 +93,7 @@
             <objects>
                 <viewController id="F4q-HK-U3M" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t53-ib-Uaa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA4-zO-2Eb">
@@ -103,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh3-fT-mOX">
-                                <rect key="frame" x="166" y="620" width="61" height="33"/>
+                                <rect key="frame" x="166" y="655" width="61" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log Out"/>
@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOi-G6-jIA">
-                                <rect key="frame" x="160.66666666666666" y="351.66666666666669" width="72" height="80"/>
+                                <rect key="frame" x="160.66666666666666" y="386" width="72" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="67"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

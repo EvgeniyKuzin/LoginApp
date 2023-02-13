@@ -8,23 +8,24 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
+    
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
     @IBOutlet var logInButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 10
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userNameTF.text!
+        welcomeVC.userName = userNameTF.text
     }
     
     @IBAction func forgotUserNameButtonTapped() {
-        showAlert(withTitle: "Oops!", andMessage: "Your username is User")
+        showAlert(withTitle: "Oops!", andMessage: "Your name is User")
     }
     
     @IBAction func forgotPasswordButtonTapped() {
@@ -35,23 +36,18 @@ final class LoginViewController: UIViewController {
         let userName = "User"
         let password = "1111"
         
-        if userNameTF.text != userName && passwordTF.text != password {
+        guard userNameTF.text != userName || passwordTF.text != password else { return }
             showAlert(
-                withTitle: "error",
-                andMessage: "wrong user name or password"
+                withTitle: "Invalid login or password",
+                andMessage: "Please, enter correct login and password"
             )
             passwordTF.text = ""
-        } else {
-            return
-        }
-    
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTF.text = ""
         passwordTF.text = ""
     }
-    
 }
 
 extension LoginViewController {
