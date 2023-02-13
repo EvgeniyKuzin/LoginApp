@@ -14,23 +14,34 @@ final class LoginViewController: UIViewController {
     @IBOutlet var logInButton: UIButton!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 10
     }
-    
-let userName = "User"
-let password = "1111"
+        
     
     
     @IBAction func forgotUserNameButtonTapped() {
         showAlert(withTitle: "Oops!", andMessage: "Your username is User")
     }
     
-    
     @IBAction func forgotPasswordButtonTapped() {
         showAlert(withTitle: "Oops!", andMessage: "Your password is 1111")
+    }
+    
+    @IBAction func logInButtonTapped() {
+        let userName = "User"
+        let password = "1111"
+        
+        if userNameTF.text == userName && passwordTF.text == password {
+            print("OK")
+        } else {
+            showAlert(
+                withTitle: "error",
+                andMessage: "wrong user name or password"
+            )
+            passwordTF.text = ""
+        }
     }
     
     
@@ -42,5 +53,9 @@ extension LoginViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.view.endEditing(false)
     }
 }
